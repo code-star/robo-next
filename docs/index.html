@@ -38,7 +38,7 @@
     <script>
       document.getElementById(
         "example"
-      ).innerHTML = `Try loading this with a ngrok url as param: ${location.origin}/?s=https://??.eu.ngrok.io`;
+      ).innerHTML = `Try loading this with a ngrok url as param: ${location.origin}${location.pathname}?s=https://??.eu.ngrok.io`;
 
       const search = new URLSearchParams(location.search.slice(1));
       const u = search.get("s");
