@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ngrok Video Stream</title>
+  </head>
+  <body>
+    <video
+      style="border: 1px solid black; width: 600px; min-height: 100px"
+      src="http://localhost:1234"
+      controls
+    ></video>
+
+    <video
+      id="ngrokstream"
+      style="border: 1px solid black; width: 600px; min-height: 100px"
+      src="?"
+      controls
+    ></video>
+
+    <div id="example"></div>
+
+    <pre>
+        Try opening this page with 
+
+        Start VLC -> Stream
+            some.mp4
+            Video - Theora + Vorbis (OGG)
+            HTTP stream to 127.0.0.1:1234
+
+        ngrok http 1234 (works when loading the ngrok url in own tab, but not embedded)
+        
+        try embedding with: https://hub.docker.com/r/igops/ngrok-skip-browser-warning
+    </pre>
+
+    <script>
+      document.getElementById(
+        "example"
+      ).innerHTML = `Try loading this with a ngrok url as param: ${location.origin}/?s=https://??.eu.ngrok.io`;
+
+      const search = new URLSearchParams(location.search.slice(1));
+      const u = search.get("s");
+      console.log("stream", u);
+      if (u) {
+        document.getElementById("ngrokstream").src = u;
+      }
+    </script>
+  </body>
+</html>
