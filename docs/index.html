@@ -7,11 +7,11 @@
     <title>Ngrok Video Stream</title>
   </head>
   <body>
-    <video
+    <!-- <video
       style="border: 1px solid black; width: 600px; min-height: 100px"
       src="http://localhost:1234"
       controls
-    ></video>
+    ></video> -->
 
     <video
       id="ngrokstream"
@@ -23,22 +23,22 @@
     <div id="example"></div>
 
     <pre>
-        Try opening this page with 
-
-        Start VLC -> Stream
-            some.mp4
-            Video - Theora + Vorbis (OGG)
-            HTTP stream to 127.0.0.1:1234
-
-        ngrok http 1234 (works when loading the ngrok url in own tab, but not embedded)
+        - Start VLC -> Stream
+          - some.mp4
+          - Video - Theora + Vorbis (OGG)
+          - HTTP stream to 127.0.0.1:1234
+        - ngrok http 1234 (works when loading the ngrok url in own tab, but not embedded)
+        - docker run -d --platform linux/amd64 --rm -p 3100:80 -e NGROK_HOST=https://??.eu.ngrok.io igops/ngrok-skip-browser-warning:latest
+        - serve .
+        - open browser to http://localhost:3000://s=http://localhost:3100
         
-        try embedding with: https://hub.docker.com/r/igops/ngrok-skip-browser-warning
+        NOTES: https://hub.docker.com/r/igops/ngrok-skip-browser-warning
     </pre>
 
     <script>
       document.getElementById(
         "example"
-      ).innerHTML = `Try loading this with a ngrok url as param: ${location.origin}${location.pathname}?s=https://??.eu.ngrok.io`;
+      ).innerHTML = `Try loading this with a ngrok url as param: ${location.origin}${location.pathname}?s=http://localhost:3100`;
 
       const search = new URLSearchParams(location.search.slice(1));
       const u = search.get("s");
