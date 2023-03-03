@@ -9,6 +9,7 @@
 3. Start Stream in OBS
 4. In Azure Media Service you can go to the Live Event that is currently running. Over there make sure a "Streaming locator" is created and selected.
 5. Copy the DASH URL and put it into the video tag src in `dash.html`. Save this file and open in the browser to display the stream.
+6. When finished stop the terminal proces by pressing `"n"`. It will clean up the Azure resources automatically.
 
 ### Known issues
 
