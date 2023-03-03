@@ -1,7 +1,7 @@
 #!/bin/bash
 
-rtmpIngestUrl="rtmp://liveevent-22716f86-updated-roboticsstream-euwe.channel.media.azure.net:1935/live/8257f1d182474318b743f541c20ea7a6"
-streamKey="liveEvent-22716f86"
+rtmpIngestUrl="rtmp://liveevent-b28cdcfa-updated-roboticsstream-euwe.channel.media.azure.net:1935/live/8257f1d182474318b743f541c20ea7a6"
+streamKey="liveEvent-b28cdcfa"
 
 rtmpStreamUrl="$rtmpIngestUrl/$streamKey"
 
@@ -17,4 +17,4 @@ ffmpeg \
   -vf format=yuyv422 \
   -vcodec libx264 -maxrate 2000k \
   -bufsize 2000k -acodec aac -ar 44100 -b:a 128k \
-  -f flv $rtmpStreamUrl
+  -f flv "$rtmpStreamUrl"

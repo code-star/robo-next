@@ -1,6 +1,7 @@
 ### Install
 
 - `npm i`
+- Make sure to login first using the `azure-cli` -> `az login`
 
 ### Run (using ffmpeg + internal Macbook Webcam)
 
@@ -23,6 +24,7 @@
 ### Known issues
 
 - When running `npm start` and continue from the step `IMPORTANT TIP!: Make CERTAIN that the video is flowing to the Preview URL before continuing!`, the script may crash. Make sure to delete the Live Event in Azure manually to stop the billing process ;-)
+- Logging in with Azure CLI is required for now. We should create a new app registry and add it to the Azure Media Service. But so far there was nobody who got that working.
 
 ### !!! Important !!!
 
