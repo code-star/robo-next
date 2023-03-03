@@ -105,8 +105,6 @@ export async function main() {
   let liveEvent: LiveEvent;
   let liveOutput: LiveOutput;
 
-  console.log(process.env);
-
   console.log("Starting the Live Streaming sample for Azure Media Services");
   try {
     mediaServicesClient = new AzureMediaServices(credential, subscriptionId);

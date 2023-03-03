@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title>DASH / HLS stream from Azure</title>
+  </head>
+  <body>
+    <p>
+      Currently only working natively in Safari or Edge. For more info see:
+      <a href="https://caniuse.com/?search=hls"
+        >https://caniuse.com/?search=hls</a
+      >. See dash.html file for working example in Chrome / FF.
+    </p>
+    <hr />
+    <video id="vid1" width="600" height="300" class="vjs-default-skin" controls>
+      <source
+        src="https://roboticsstream-euwe.streaming.media.azure.net/dce4703b-7ac5-4895-a74e-2b6e9d26db07/output.ism/manifest(format=m3u8-cmaf)"
+      />
+    </video>
+  </body>
+</html>

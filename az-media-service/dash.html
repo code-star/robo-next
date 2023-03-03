@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dash.js Example</title>
+    <style>
+      video {
+        width: 640px;
+        height: 360px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Cross browser DASH playback.</p>
+    <p>Uses https://github.com/Dash-Industry-Forum/dash.js</p>
+    <div>
+      <video id="videoPlayer" controls></video>
+    </div>
+    <script src="http://cdn.dashjs.org/latest/dash.all.min.js"></script>
+    <script>
+      (function () {
+        var url =
+          "https://roboticsstream-euwe.streaming.media.azure.net/dce4703b-7ac5-4895-a74e-2b6e9d26db07/output.ism/manifest(format=mpd-time-cmaf)";
+        var player = dashjs.MediaPlayer().create();
+        player.initialize(document.querySelector("#videoPlayer"), url, true);
+      })();
+    </script>
+  </body>
+</html>
